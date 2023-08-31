@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: yog-service
+  profiles:
+    active: dev
+
+dubbo:
+  application:
+    name: yog-service
+  protocol:
+    port: 20880
+    name: dubbo

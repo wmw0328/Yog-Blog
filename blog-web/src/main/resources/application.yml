@@ -1,0 +1,21 @@
+server:
+  port: 8999 #项目端口
+
+spring:
+  application:
+    name: yog-web
+  profiles:
+      active: dev
+  mvc:
+    pathmatch: #Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X使用的是PathPatternMatcher
+      matching-strategy: ANT_PATH_MATCHER
+
+dubbo:
+  application:
+    name: yog-service
+  protocol:
+    name: dubbo
+    port: 20880
+
+
+
