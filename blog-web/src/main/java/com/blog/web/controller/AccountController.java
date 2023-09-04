@@ -1,8 +1,11 @@
 package com.blog.web.controller;
 
 import com.blog.api.entity.BlogUser;
+import com.blog.api.entity.Result;
 import com.blog.api.service.BlogUserService;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +21,16 @@ public class AccountController {
     BlogUserService blogUserService;
 
     @GetMapping("/test")
-    List<BlogUser> test(){
+    public List<BlogUser> test(){
         return blogUserService.test();
     }
+
+
+    @GetMapping("/login")
+    @RequiresRoles(logical = Logical.OR, value = {"user", "admin"})
+    public String login(String uname,String psd){
+
+        return "success";
+    }
+
 }

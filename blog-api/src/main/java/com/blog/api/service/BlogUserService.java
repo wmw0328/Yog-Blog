@@ -15,4 +15,8 @@ public interface BlogUserService extends IService<BlogUser> {
 
     List<BlogUser> test();
 
+    //根据用户名称查询用户
+    BlogUser getUserByName(String username);
+
+
 }

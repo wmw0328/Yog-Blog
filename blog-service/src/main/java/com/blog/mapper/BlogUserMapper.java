@@ -11,4 +11,5 @@ import java.util.List;
 public interface BlogUserMapper extends BaseMapper<BlogUser> {
 
     List<BlogUser> test();
+
 }

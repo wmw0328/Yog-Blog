@@ -9,6 +9,8 @@ spring:
   mvc:
     pathmatch: #Springfox使用的路径匹配是基于AntPathMatcher的，而Spring Boot 2.6.X使用的是PathPatternMatcher
       matching-strategy: ANT_PATH_MATCHER
+  main:
+      allow-bean-definition-overriding: true
 
 dubbo:
   application:
@@ -16,6 +18,15 @@ dubbo:
   protocol:
     name: dubbo
     port: 20880
+
+emos:
+  jwt:
+    #密钥
+    secret: abc123456
+    #令牌过期时间（天）
+    expire: 5
+    #令牌缓存时间（天数）
+    cache-expire: 10
 
 
 

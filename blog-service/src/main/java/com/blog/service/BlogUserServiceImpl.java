@@ -1,5 +1,6 @@
 package com.blog.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.blog.api.entity.BlogUser;
 import com.blog.api.service.BlogUserService;
@@ -24,5 +25,14 @@ public class BlogUserServiceImpl extends ServiceImpl<BlogUserMapper, BlogUser> i
     @Override
     public List<BlogUser> test() {
         return Collections.singletonList(blogUserMapper.selectById(1));
+    }
+
+    @Override
+    public BlogUser getUserByName(String username) {
+        QueryWrapper<BlogUser> wrapper = new QueryWrapper<>();
+        wrapper.eq("username",username);
+        wrapper.eq("status",1);
+        blogUserMapper.selectOne(wrapper);
+        return null;
     }
 }
