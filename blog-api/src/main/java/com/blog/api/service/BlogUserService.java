@@ -18,5 +18,8 @@ public interface BlogUserService extends IService<BlogUser> {
     //根据用户名称查询用户
     BlogUser getUserByName(String username);
 
+    //用户登录
+    BlogUser login(String username,String passward);
+
 
 }

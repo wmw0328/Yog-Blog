@@ -32,7 +32,15 @@ public class BlogUserServiceImpl extends ServiceImpl<BlogUserMapper, BlogUser> i
         QueryWrapper<BlogUser> wrapper = new QueryWrapper<>();
         wrapper.eq("username",username);
         wrapper.eq("status",1);
-        blogUserMapper.selectOne(wrapper);
-        return null;
+        return blogUserMapper.selectOne(wrapper);
+    }
+
+    @Override
+    public BlogUser login(String username, String passward) {
+        QueryWrapper<BlogUser> wrapper = new QueryWrapper<>();
+        wrapper.eq("username",username);
+        wrapper.eq("passward",passward);
+        wrapper.eq("status",1);
+        return blogUserMapper.selectOne(wrapper);
     }
 }
