@@ -3,13 +3,13 @@ server:
 
 spring:
   application:
-    name: yog-service
+    name: blog-service
   profiles:
     active: dev
 
 dubbo:
   application:
-    name: yog-service
+    name: blog-service
   protocol:
     port: 20880
     name: dubbo

@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: yog-web
+    name: blog-web
   profiles:
       active: dev
   mvc:
@@ -12,7 +12,7 @@ spring:
 
 dubbo:
   application:
-    name: yog-service
+    name: blog-web
   protocol:
     name: dubbo
     port: 20880
