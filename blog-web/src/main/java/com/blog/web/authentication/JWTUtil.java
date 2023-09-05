@@ -70,14 +70,13 @@ public class JWTUtil {
      * 生成 token
      *
      * @param username 用户名
-     * @param secret   用户的密码
      * @return token
      */
-    public static String sign(String username, String secret) {
+    public static String sign(String username) {
         try {
             username = StringUtils.lowerCase(username);
             Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
-            Algorithm algorithm = Algorithm.HMAC256(secret);
+            Algorithm algorithm = Algorithm.HMAC256(SECRET);
             return JWT.create()
                     .withClaim("username", username)
                     .withExpiresAt(date)
